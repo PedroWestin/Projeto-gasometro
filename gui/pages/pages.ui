@@ -17,48 +17,1710 @@
    <number>0</number>
   </property>
   <widget class="QWidget" name="page_1">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="page_layout_home">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Pagina 1</string>
+     <widget class="QScrollArea" name="scroll_home">
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
+      <property name="widgetResizable">
+       <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scroll_contents_home">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>900</width>
+         <height>700</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="content_layout_home">
+        <property name="leftMargin">
+         <number>28</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>28</number>
+        </property>
+        <property name="bottomMargin">
+         <number>28</number>
+        </property>
+        <property name="spacing">
+         <number>18</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="header_texts_home">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lbl_title_home">
+            <property name="text">
+             <string>VISÃO GERAL</string>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_title</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_home_date">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_subtitle</string>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="stats_row">
+          <property name="spacing">
+           <number>16</number>
+          </property>
+          <item>
+           <widget class="PyStatCard" name="card_total">
+            <property name="title" stdset="0">
+             <string>Total de botijões</string>
+            </property>
+            <property name="icon" stdset="0">
+             <string>icon_bottle.svg</string>
+            </property>
+            <property name="tone" stdset="0">
+             <string>blue</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="PyStatCard" name="card_nivel">
+            <property name="title" stdset="0">
+             <string>Nível médio</string>
+            </property>
+            <property name="icon" stdset="0">
+             <string>icon_gauge.svg</string>
+            </property>
+            <property name="tone" stdset="0">
+             <string>green</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="PyStatCard" name="card_alertas_ativos">
+            <property name="title" stdset="0">
+             <string>Alertas ativos</string>
+            </property>
+            <property name="icon" stdset="0">
+             <string>icon_bell.svg</string>
+            </property>
+            <property name="tone" stdset="0">
+             <string>red</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="PyStatCard" name="card_economia">
+            <property name="title" stdset="0">
+             <string>Economia no mês</string>
+            </property>
+            <property name="icon" stdset="0">
+             <string>icon_chart.svg</string>
+            </property>
+            <property name="tone" stdset="0">
+             <string>accent</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="charts_row" stretch="1,1">
+          <property name="spacing">
+           <number>16</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="card_status">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_status_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>22</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_status_title">
+               <property name="text">
+                <string>Status dos botijões</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>chart_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="status_row">
+               <property name="spacing">
+                <number>32</number>
+               </property>
+               <item alignment="Qt::AlignmentFlag::AlignVCenter">
+                <widget class="PyDonutChart" name="donut_status">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>150</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>150</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignmentFlag::AlignVCenter">
+                <widget class="QWidget" name="legend_box">
+                 <layout class="QVBoxLayout" name="legend_layout">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <layout class="QHBoxLayout" name="legend_row_cheio">
+                    <property name="spacing">
+                     <number>8</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignVCenter">
+                     <widget class="QLabel" name="legend_dot_cheio">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>legend_dot</string>
+                      </property>
+                      <property name="tone" stdset="0">
+                       <string>green</string>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>10</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>10</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="legend_text_cheio">
+                      <property name="text">
+                       <string>Cheio —</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>muted</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbl_count_cheio">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>muted</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="legend_spacer_cheio">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="legend_row_baixo">
+                    <property name="spacing">
+                     <number>8</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignVCenter">
+                     <widget class="QLabel" name="legend_dot_baixo">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>legend_dot</string>
+                      </property>
+                      <property name="tone" stdset="0">
+                       <string>orange</string>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>10</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>10</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="legend_text_baixo">
+                      <property name="text">
+                       <string>Baixo —</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>muted</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbl_count_baixo">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>muted</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="legend_spacer_baixo">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="legend_row_critico">
+                    <property name="spacing">
+                     <number>8</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignVCenter">
+                     <widget class="QLabel" name="legend_dot_critico">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>legend_dot</string>
+                      </property>
+                      <property name="tone" stdset="0">
+                       <string>red</string>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>10</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>10</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="legend_text_critico">
+                      <property name="text">
+                       <string>Crítico —</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>muted</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbl_count_critico">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>muted</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="legend_spacer_critico">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="status_spacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="card_consumo">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_consumo_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>18</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_consumo_title">
+               <property name="text">
+                <string>Consumo — últimos 7 dias (%)</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>chart_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyBarChart" name="chart_consumo">
+               <property name="tone" stdset="0">
+                <string>blue</string>
+               </property>
+               <property name="period" stdset="0">
+                <string>days7</string>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>170</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="card_table_home">
+          <property name="role" stdset="0">
+           <string>card</string>
+          </property>
+          <layout class="QVBoxLayout" name="card_table_home_layout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="PyTableWidget" name="table_home">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>BOTIJÃO</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>NÍVEL</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>AUTONOMIA</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>STATUS</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>ÚLTIMA LEITURA</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>AÇÃO</string>
+              </property>
+             </column>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="bottom_row" stretch="1,1">
+          <property name="spacing">
+           <number>16</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="card_alertas">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_alertas_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>22</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_alertas_title">
+               <property name="text">
+                <string>Alertas</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>chart_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="alerts_container">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>96</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="alerts_layout">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="alertas_spacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="card_financeiro">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_financeiro_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>22</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_financeiro_title">
+               <property name="text">
+                <string>Resumo financeiro do mês</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>chart_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="panel_financeiro">
+               <property name="role" stdset="0">
+                <string>panel_dark</string>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>96</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="panel_financeiro_layout">
+                <property name="leftMargin">
+                 <number>22</number>
+                </property>
+                <property name="topMargin">
+                 <number>18</number>
+                </property>
+                <property name="rightMargin">
+                 <number>22</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>18</number>
+                </property>
+                <property name="spacing">
+                 <number>4</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lbl_fin_total_caption">
+                  <property name="text">
+                   <string>Gasto no mês</string>
+                  </property>
+                  <property name="role" stdset="0">
+                   <string>panel_label</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lbl_fin_total">
+                  <property name="text">
+                   <string>—</string>
+                  </property>
+                  <property name="role" stdset="0">
+                   <string>panel_value</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="fin_row">
+                  <property name="spacing">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <layout class="QVBoxLayout" name="fin_pair_economia">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="lbl_fin_economia_caption">
+                      <property name="text">
+                       <string>Economia</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>panel_label</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbl_fin_economia">
+                      <property name="text">
+                       <string>—</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>panel_value</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="fin_pair_trocas">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="lbl_fin_trocas_caption">
+                      <property name="text">
+                       <string>Trocas realizadas</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>panel_label</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="lbl_fin_trocas">
+                      <property name="text">
+                       <string>—</string>
+                      </property>
+                      <property name="role" stdset="0">
+                       <string>panel_value</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="fin_spacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="spacer_home">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
   <widget class="QWidget" name="page_3">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="page_layout_botijoes">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Pagina 3</string>
+     <widget class="QScrollArea" name="scroll_botijoes">
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
+      <property name="widgetResizable">
+       <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scroll_contents_botijoes">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>900</width>
+         <height>700</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="content_layout_botijoes">
+        <property name="leftMargin">
+         <number>28</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>28</number>
+        </property>
+        <property name="bottomMargin">
+         <number>28</number>
+        </property>
+        <property name="spacing">
+         <number>18</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="header_row_botijoes">
+          <item>
+           <layout class="QVBoxLayout" name="header_texts_botijoes">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lbl_title_botijoes">
+              <property name="text">
+               <string>MEUS BOTIJÕES</string>
+              </property>
+              <property name="role" stdset="0">
+               <string>page_title</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lbl_botijoes_count">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="role" stdset="0">
+               <string>page_subtitle</string>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="header_spacer_botijoes">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item alignment="Qt::AlignmentFlag::AlignTop">
+           <widget class="QPushButton" name="btn_conectar_botijao">
+            <property name="text">
+             <string>+ Conectar botijão</string>
+            </property>
+            <property name="variant" stdset="0">
+             <string>primary</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="botijoes_grid" columnstretch="1,1">
+          <property name="horizontalSpacing">
+           <number>16</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>16</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="PyBotijaoCard" name="card_botijao_1"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="PyBotijaoCard" name="card_botijao_2"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="PyBotijaoCard" name="card_botijao_3"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="PyBotijaoCard" name="card_botijao_4"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="spacer_botijoes">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
   <widget class="QWidget" name="page_2">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="page_layout_config">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Pagina 2</string>
+     <widget class="QScrollArea" name="scroll_config">
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
+      <property name="widgetResizable">
+       <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scroll_contents_config">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>900</width>
+         <height>700</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="content_layout_config">
+        <property name="leftMargin">
+         <number>28</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>28</number>
+        </property>
+        <property name="bottomMargin">
+         <number>28</number>
+        </property>
+        <property name="spacing">
+         <number>18</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="header_texts_config">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lbl_title_config">
+            <property name="text">
+             <string>CONFIGURAÇÕES</string>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_title</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_config_subtitle">
+            <property name="text">
+             <string>Preferências do aplicativo</string>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_subtitle</string>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="card_aparencia">
+          <property name="role" stdset="0">
+           <string>card</string>
+          </property>
+          <layout class="QVBoxLayout" name="card_aparencia_layout">
+           <property name="leftMargin">
+            <number>22</number>
+           </property>
+           <property name="topMargin">
+            <number>20</number>
+           </property>
+           <property name="rightMargin">
+            <number>22</number>
+           </property>
+           <property name="bottomMargin">
+            <number>20</number>
+           </property>
+           <property name="spacing">
+            <number>14</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lbl_aparencia_title">
+             <property name="text">
+              <string>Aparência</string>
+             </property>
+             <property name="role" stdset="0">
+              <string>chart_title</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="divider_aparencia">
+             <property name="role" stdset="0">
+              <string>divider</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="theme_row" stretch="1,0">
+             <property name="spacing">
+              <number>24</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="theme_texts">
+               <property name="spacing">
+                <number>2</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lbl_theme_title">
+                 <property name="text">
+                  <string>Tema escuro</string>
+                 </property>
+                 <property name="role" stdset="0">
+                  <string>setting_title</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lbl_theme_desc">
+                 <property name="text">
+                  <string>Alterna entre o tema claro e o escuro. A escolha fica salva neste computador.</string>
+                 </property>
+                 <property name="role" stdset="0">
+                  <string>muted</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item alignment="Qt::AlignmentFlag::AlignVCenter">
+              <widget class="PyToggle" name="toggle_dark_theme"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer_config">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="page_4">
+   <layout class="QVBoxLayout" name="page_layout_pontos">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="scroll_pontos">
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scroll_contents_pontos">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>900</width>
+         <height>700</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="content_layout_pontos">
+        <property name="leftMargin">
+         <number>28</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>28</number>
+        </property>
+        <property name="bottomMargin">
+         <number>28</number>
+        </property>
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="header_texts_pontos">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lbl_title_pontos">
+            <property name="text">
+             <string>PONTOS DE TROCA</string>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_title</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_pontos_local">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_subtitle</string>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="pontos_grid" columnstretch="1,1,1">
+          <property name="horizontalSpacing">
+           <number>16</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>16</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="PyPontoCard" name="card_ponto_1"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="PyPontoCard" name="card_ponto_2"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="PyPontoCard" name="card_ponto_3"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="PyPontoCard" name="card_ponto_4"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="PyPontoCard" name="card_ponto_5"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="PyPontoCard" name="card_ponto_6"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_como_trocar">
+          <property name="text">
+           <string>COMO FAZER A TROCA</string>
+          </property>
+          <property name="role" stdset="0">
+           <string>section_title</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="steps_row" stretch="1,1,1">
+          <property name="spacing">
+           <number>16</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="card_step_1">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_step_1_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_step_1_number">
+               <property name="text">
+                <string>01</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>step_number</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_step_1_title">
+               <property name="text">
+                <string>Feche e desconecte</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>step_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_step_1_text">
+               <property name="text">
+                <string>Feche o registro do botijão vazio e desconecte a mangueira com cuidado.</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>muted</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="card_step_2">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_step_2_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_step_2_number">
+               <property name="text">
+                <string>02</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>step_number</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_step_2_title">
+               <property name="text">
+                <string>Leve ou peça retirada</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>step_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_step_2_text">
+               <property name="text">
+                <string>Leve o botijão vazio até o ponto escolhido ou peça retirada e entrega.</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>muted</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="card_step_3">
+            <property name="role" stdset="0">
+             <string>card</string>
+            </property>
+            <layout class="QVBoxLayout" name="card_step_3_layout">
+             <property name="leftMargin">
+              <number>22</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>22</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lbl_step_3_number">
+               <property name="text">
+                <string>03</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>step_number</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_step_3_title">
+               <property name="text">
+                <string>Confira antes de conectar</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>step_title</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_step_3_text">
+               <property name="text">
+                <string>Verifique o lacre, a validade e a vedação do botijão novo antes de instalar.</string>
+               </property>
+               <property name="role" stdset="0">
+                <string>muted</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="spacer_pontos">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="page_5">
+   <layout class="QVBoxLayout" name="page_layout_historico">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="scroll_historico">
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scroll_contents_historico">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>900</width>
+         <height>700</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="content_layout_historico">
+        <property name="leftMargin">
+         <number>28</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>28</number>
+        </property>
+        <property name="bottomMargin">
+         <number>28</number>
+        </property>
+        <property name="spacing">
+         <number>18</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="header_texts_historico">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lbl_title_historico">
+            <property name="text">
+             <string>HISTÓRICO</string>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_title</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_historico_subtitle">
+            <property name="text">
+             <string>Consumo e trocas dos últimos meses</string>
+            </property>
+            <property name="role" stdset="0">
+             <string>page_subtitle</string>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="card_historico_chart">
+          <property name="role" stdset="0">
+           <string>card</string>
+          </property>
+          <layout class="QVBoxLayout" name="card_historico_chart_layout">
+           <property name="leftMargin">
+            <number>22</number>
+           </property>
+           <property name="topMargin">
+            <number>20</number>
+           </property>
+           <property name="rightMargin">
+            <number>22</number>
+           </property>
+           <property name="bottomMargin">
+            <number>18</number>
+           </property>
+           <property name="spacing">
+            <number>14</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lbl_historico_chart_title">
+             <property name="text">
+              <string>Consumo médio mensal (%)</string>
+             </property>
+             <property name="role" stdset="0">
+              <string>chart_title</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PyBarChart" name="chart_historico">
+             <property name="tone" stdset="0">
+              <string>accent</string>
+             </property>
+             <property name="period" stdset="0">
+              <string>months6</string>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>190</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="card_table_historico">
+          <property name="role" stdset="0">
+           <string>card</string>
+          </property>
+          <layout class="QVBoxLayout" name="card_table_historico_layout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="PyTableWidget" name="table_historico">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>DATA</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>BOTIJÃO</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>LOCAL DA TROCA</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>VALOR</string>
+              </property>
+             </column>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer_historico">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyStatCard</class>
+   <extends>QFrame</extends>
+   <header>gui.widgets.py_stat_card</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDonutChart</class>
+   <extends>QWidget</extends>
+   <header>gui.widgets.py_donut_chart</header>
+  </customwidget>
+  <customwidget>
+   <class>PyBarChart</class>
+   <extends>QWidget</extends>
+   <header>gui.widgets.py_bar_chart</header>
+  </customwidget>
+  <customwidget>
+   <class>PyBotijaoCard</class>
+   <extends>QFrame</extends>
+   <header>gui.widgets.py_botijao_card</header>
+  </customwidget>
+  <customwidget>
+   <class>PyPontoCard</class>
+   <extends>QFrame</extends>
+   <header>gui.widgets.py_ponto_card</header>
+  </customwidget>
+  <customwidget>
+   <class>PyTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>gui.widgets.py_table_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>PyToggle</class>
+   <extends>QCheckBox</extends>
+   <header>gui.widgets.py_toggle</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
